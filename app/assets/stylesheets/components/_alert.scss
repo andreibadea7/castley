@@ -1,6 +1,18 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+  margin: 0;
+  position: absolute;
+  // top: $navbar-height;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  border: 0;
+  border-radius: 0;
+}
+
+.alert-info {
+  // background: $success;
+}
+.alert-warning {
+  // background: $error;
 }
