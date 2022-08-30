@@ -31,3 +31,6 @@
     Can we ride horses? <%= @castle.has_horses ? "Yes" : "No" %>
   </li>
 </ul>
+
+<h4>Do you want to reserve this castle?</h4>
+<p class="btn btn-primary btn-lg"><%= link_to "Click here!", new_castle_reservation_path(@castle) %>
