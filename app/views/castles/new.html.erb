@@ -1,13 +1,16 @@
   <h1>Add a castle to rent!</h1>
 
-  <%= simple_form_for(@castle) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :price %>
-      <%= f.input :capacity %>
-      <%= f.input :has_internet %>
-      <%= f.input :has_swimming_pool %>
-      <%= f.input :has_butlers %>
-      <%= f.input :has_horses %>
-      <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
+
+  <div class="form-group">
+    <%= simple_form_for(@castle) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :price %>
+        <%= f.input :capacity %>
+        <%= f.input :has_internet %>
+        <%= f.input :has_swimming_pool %>
+        <%= f.input :has_butlers %>
+        <%= f.input :has_horses %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
