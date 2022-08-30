@@ -1,0 +1,32 @@
+<h1><%= @castle.name %></h1>
+
+<h2>Key information</h2>
+
+<ul>
+  <li>
+    Address: <%= @castle.address %>
+  </li>
+  <li>
+    How many people can stay? <%= @castle.capacity %>
+  </li>
+  <li>
+    How much does it cost? <%= @castle.price %>
+  </li>
+</ul>
+
+<h2>Other information</h2>
+
+<ul>
+  <li>
+    Is there internet? <%= if @castle.has_internet ? "Yes" : "No" %>
+  </li>
+  <li>
+    Is there a swimming pool? <%= if @castle.has_swimming_pool ? "Yes" : "No" %>
+  </li>
+  <li>
+    Do we have butlers? <%= if @castle.has_butlers ? "Yes" : "No" %>
+  </li>
+  <li>
+    Can we ride horses? <%= if @castle.has_horses ? "Yes" : "No" %>
+  </li>
+</ul>
