@@ -4,14 +4,23 @@
 
 <p>Find out more about a castle by clicking on its name! </p>
 
-  <div class="cards_grid">
+  <div class="cards">
     <%# img %>
-    <div class="card_product">
+    <%# <div class="card-product"> %>
       <% @castles.each do |castle| %>
-      <p>Name:<%= link_to castle.name, castle_path(castle)  %></p>
-      <p>Address: <%= castle.address %></p>
-      <p>Price: <%= castle.price %></p>
+      <div class="card-product">
+        <ul>
+          Name: <%= link_to castle.name, castle_path(castle) %>
+        <li>
+          Address: <%= castle.address %>
+        </li>
+        <li>
+          Price: <%= castle.price %>
+        </li>
+        </ul>
+      </div>
       <% end %>
     </div>
-
 </div>
+
+<%# Potential to make DRY by creating a card partial in shared file for the iteration %>
