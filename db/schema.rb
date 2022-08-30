@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_101142) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_113028) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_101142) do
     t.boolean "has_horses"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "host_id", null: false
+    t.string "name"
+    t.index ["host_id"], name: "index_castles_on_host_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -32,6 +35,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_101142) do
     t.integer "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "guest_id", null: false
+    t.bigint "castle_id", null: false
+    t.index ["castle_id"], name: "index_reservations_on_castle_id"
+    t.index ["guest_id"], name: "index_reservations_on_guest_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "reservation_id", null: false
+    t.integer "rating"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,4 +65,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_101142) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "castles", "users", column: "host_id"
+  add_foreign_key "reservations", "castles"
+  add_foreign_key "reservations", "users", column: "guest_id"
+  add_foreign_key "reviews", "reservations"
 end
