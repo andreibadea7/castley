@@ -1,0 +1,9 @@
+<h1>Reserve this castle!</h1>
+
+<div class="form-group">
+    <%= simple_form_for [@castle, @reservation] do |f| %>
+        <%= f.input :check_in %>
+        <%= f.input :check_out %>
+        <%=  f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+ </div>
