@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+.Perks,
+.Home__cards {
+  padding: 80px 0;
+}
+
+.Perks {
+  background-color: $white;
+  text-align: center;
+
+  &__heading {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+}
+
+.Home__cards-heading {
+  margin-bottom: 48px;
+}
