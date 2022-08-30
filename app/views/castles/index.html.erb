@@ -1,1 +1,8 @@
 <h1>Castles to rent!</h1>
+
+<p>Name</p>
+  <% @castles.each do |castle| %>
+  <p><%= link_to castle.name, castle_path(castle)  %></p>
+  <% end %>
+
+<p>Find out more about a castle by clicking on it! </p>
