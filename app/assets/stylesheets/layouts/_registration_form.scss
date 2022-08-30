@@ -1,10 +1,14 @@
 .form-registration {
+  background-color: #FFFFFF;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   width: 100%;
-  max-width: 330px;
-  padding: 15px;
+  max-width: 500px;
+  padding: 40px;
   margin: auto;
   margin-top: 39px; // This is needed so that notifications won't overlap the form!
+  margin-bottom: 39px;
 }
+
 
 .Form--text {
   margin-top: 16px;
