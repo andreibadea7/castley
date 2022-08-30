@@ -4,13 +4,13 @@
 
 <ul>
   <li>
-    <%= @castle.address %>
+    Address: <%= @castle.address %>
   </li>
   <li>
-    <%= @castle.capacity %>
+    How many people can stay? <%= @castle.capacity %>
   </li>
   <li>
-    <%= @castle.price %>
+    How much does it cost? <%= @castle.price %>
   </li>
 </ul>
 
@@ -18,15 +18,15 @@
 
 <ul>
   <li>
-    <%= @castle.has_internet %>
+    Is there internet? <%= if @castle.has_internet ? "Yes" : "No" %>
   </li>
   <li>
-    <%= @castle.has_swimming_pool %>
+    Is there a swimming pool? <%= if @castle.has_swimming_pool ? "Yes" : "No" %>
   </li>
   <li>
-    <%= @castle.has_butlers %>
+    Do we have butlers? <%= if @castle.has_butlers ? "Yes" : "No" %>
   </li>
   <li>
-    <%= @castle.has_horses %>
+    Can we ride horses? <%= if @castle.has_horses ? "Yes" : "No" %>
   </li>
 </ul>
