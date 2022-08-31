@@ -9,19 +9,11 @@
       <% @castles.each do |castle| %>
       <div class="card-product">
         <ul>
-          Name: <%= link_to castle.name, castle_path(castle) %>
-        <li>
-          Address: <%= castle.address %>
-        </li>
-        <li>
-          Price: £<%= castle.price %> per night
-        </li>
-        <li>
-          Host name: <%= castle.host[:first_name] %> <%= castle.host[:last_name] %>
-        </li>
+          <li>Name: <%= link_to castle.name, castle_path(castle) %></li>
+          <li>Address: <%= castle.address %></li>
+          <li>Price: £<%= castle.price %> per night</li>
+          <li>Host name: <%= castle.host[:first_name] %> <%= castle.host[:last_name] %></li>
         </ul>
       </div>
       <% end %>
 </div>
-
-<%# Potential to make DRY by creating a card partial in shared file for the iteration %>
