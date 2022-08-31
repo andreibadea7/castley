@@ -1,7 +1,7 @@
 .alert {
   margin: 0;
   position: absolute;
-  top: -50px;
+  top: 75px;
   left: 0;
   width: 100%;
   text-align: center;
@@ -11,8 +11,10 @@
 }
 
 .alert-info {
-  background: green;
+  background: #D1E7DE;
+  color: #0F5132;
 }
 .alert-warning {
-  background: red;
+  background: #F9D7DA;
+  color: #841F29;
 }
