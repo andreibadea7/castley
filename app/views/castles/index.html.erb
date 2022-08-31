@@ -4,6 +4,7 @@
       <% @castles.each do |castle| %>
         <div class="card-trip">
           <%= image_tag castle.image_url %>
+          <% p castle.image_url  %>
           <div class="card-trip-infos">
             <div>
               <h2><%= link_to castle.name,
@@ -11,7 +12,7 @@
                       style: "text-decoration: none; color: black;"  %></h2>
               <p><%= castle.address %></p>
             </div>
-            <h2 class="card-trip-pricing">£<%= castle.price %></h2>
+            <h2 class="card-trip-pricing">£<%= number_with_delimiter(castle.price) %></h2>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
         </div>
