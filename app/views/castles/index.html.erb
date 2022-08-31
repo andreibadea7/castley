@@ -15,7 +15,10 @@
           Address: <%= castle.address %>
         </li>
         <li>
-          Price: <%= castle.price %>
+          Price: £<%= castle.price %> per night
+        </li>
+        <li>
+          Host name: <%= castle.host[:first_name] %> <%= castle.host[:last_name] %>
         </li>
         </ul>
       </div>
