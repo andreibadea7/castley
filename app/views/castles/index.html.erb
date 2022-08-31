@@ -3,22 +3,23 @@
   <h1>Castles to rent!</h1>
   <p>Find out more about a castle by clicking on its name! </p>
 
-    <div class="cards">
-      <%# img %>
-      <%# <div class="card-product"> %>
-        <% @castles.each do |castle| %>
-        <div class="card-product">
-          <ul>
-            Name: <%= link_to castle.name, castle_path(castle) %>
-          <li>
-            Address: <%= castle.address %>
-          </li>
-          <li>
-            Price: <%= castle.price %>
-          </li>
-          </ul>
-        </div>
-        <% end %>
+  <div class="cards">
+    <%# img %>
+    <%# <div class="card-product"> %>
+      <% @castles.each do |castle| %>
+      <div class="card-product">
+        <ul>
+          Name: <%= link_to castle.name, castle_path(castle) %>
+        <li>
+          Address: <%= castle.address %>
+        </li>
+        <li>
+          Price: £<%= castle.price %> per night
+        </li>
+        <li>
+          Host name: <%= castle.host[:first_name] %> <%= castle.host[:last_name] %>
+        </li>
+        </ul>
       </div>
 </div>
 
