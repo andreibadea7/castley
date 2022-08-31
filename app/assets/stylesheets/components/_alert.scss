@@ -1,7 +1,7 @@
 .alert {
   margin: 0;
   position: absolute;
-  // top: $navbar-height;
+  top: -50px;
   left: 0;
   width: 100%;
   text-align: center;
@@ -11,8 +11,8 @@
 }
 
 .alert-info {
-  // background: $success;
+  background: green;
 }
 .alert-warning {
-  // background: $error;
+  background: red;
 }
