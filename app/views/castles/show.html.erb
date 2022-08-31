@@ -1,36 +1,42 @@
-<h1><%= @castle.name %></h1>
-<%= link_to "Other castles", castles_path %>
+<div class="form-registration">
+  <h1><%= @castle.name.capitalize %></h1>
 
-<h2>Key information</h2>
+  <h2>Key information</h2>
 
-<ul>
-  <li>
-    Address: <%= @castle.address %>
-  </li>
-  <li>
-    How many people can stay? <%= @castle.capacity %>
-  </li>
-  <li>
-    How much does it cost? <%= @castle.price %>
-  </li>
-</ul>
+  <ul>
+    <li>
+      Address: <%= @castle.address %>
+    </li>
+    <li>
+      How many people can stay? <%= @castle.capacity %>
+    </li>
+    <li>
+      How much does it cost? <%= @castle.price %>
+    </li>
+  </ul>
 
-<h2>Other information</h2>
+  <h2>Other information</h2>
 
-<ul>
-  <li>
-    Is there internet? <%= @castle.has_internet ? "Yes" : "No" %>
-  </li>
-  <li>
-    Is there a swimming pool? <%= @castle.has_swimming_pool ? "Yes" : "No" %>
-  </li>
-  <li>
-    Do we have butlers? <%= @castle.has_butlers ? "Yes" : "No" %>
-  </li>
-  <li>
-    Can we ride horses? <%= @castle.has_horses ? "Yes" : "No" %>
-  </li>
-</ul>
+  <ul>
+    <li>
+      Is there internet? <%= @castle.has_internet ? "Yes" : "No" %>
+    </li>
+    <li>
+      Is there a swimming pool? <%= @castle.has_swimming_pool ? "Yes" : "No" %>
+    </li>
+    <li>
+      Do we have butlers? <%= @castle.has_butlers ? "Yes" : "No" %>
+    </li>
+    <li>
+      Can we ride horses? <%= @castle.has_horses ? "Yes" : "No" %>
+    </li>
+  </ul>
+  <div>
+    <h4>Do you want to reserve this castle?</h4>
+    <p class="btn btn-primary btn-lg"><%= link_to "Click here!", new_castle_reservation_path(@castle), class: "text-white text-decoration-none" %>
+  </div>
 
-<h4>Do you want to reserve this castle?</h4>
-<p class="btn btn-primary btn-lg"><%= link_to "Click here!", new_castle_reservation_path(@castle) %>
+  <div>
+   <p class="btn btn-light btn-sm"> <%=  link_to "Back to other castles", castles_path, class: "text-blue text-decoration-none" %>
+  </div>
+</div>

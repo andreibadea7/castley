@@ -1,9 +1,10 @@
-<h1>Reserve this castle!</h1>
+<div class="form-registration">
 
-<div class="form-group">
+<h3>Book your stay at <%= @castle.name %>!</h3>
+
     <%= simple_form_for [@castle, @reservation] do |f| %>
         <%= f.input :check_in %>
         <%= f.input :check_out %>
-        <%=  f.button :submit, class: "btn btn-primary" %>
+        <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
  </div>

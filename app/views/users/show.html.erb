@@ -1,0 +1,16 @@
+<h1>User Profile</h1>
+
+<h3>User information</h3>
+<p>Title: <%= @user.title %></p>
+<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+<p>Email: <%= @user.email %></p>
+
+<h3>Current reservations</h3>
+
+<% @my_reservations.each do |stay| %>
+<li>
+  Place: <%= stay.castle[:name] %>,
+  Total nights stay: <%= (stay.check_out - stay.check_in).to_i %>,
+  Total price: £ <%= stay.total_price %>
+</li>
+<% end %>
