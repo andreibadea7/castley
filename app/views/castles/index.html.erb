@@ -1,20 +1,20 @@
-<%# <%= render 'shared/map' %>
+<%= render 'shared/map' %>
 <div class="navbar-space">
-
-  <h1>Castles to rent!</h1>
-  <p>Find out more about a castle by clicking on its name! </p>
-
   <div class="cards">
-    <%# img %>
-    <%# <div class="card-product"> %>
       <% @castles.each do |castle| %>
-      <div class="card-product">
-        <ul>
-          <li>Name: <%= link_to castle.name, castle_path(castle) %></li>
-          <li>Address: <%= castle.address %></li>
-          <li>Price: £<%= castle.price %> per night</li>
-          <li>Host name: <%= castle.host[:first_name] %> <%= castle.host[:last_name] %></li>
-        </ul>
-      </div>
+        <div class="card-trip">
+          <%= image_tag castle.image_url %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to castle.name,
+                      castle_path(castle),
+                      style: "text-decoration: none; color: black;"  %></h2>
+              <p><%= castle.address %></p>
+            </div>
+            <h2 class="card-trip-pricing">£<%= castle.price %></h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
       <% end %>
+  </div>
 </div>

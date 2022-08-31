@@ -18,11 +18,10 @@ html_doc.search(".listicle-slide").each_with_index do |element, index|
                 name: castle_name,
                 address: castle_address,
                 image_url: image_url,
-                price: rand(15..60)*1000,
+                price: rand(15..60) * 1000,
                 has_internet: [true, false].sample,
                 has_butlers: [true, false].sample,
                 has_swimming_pool: [true, false].sample,
-                has_horses:[true, false].sample,
-                capacity: rand(5..25)*10
-               )
+                has_horses: [true, false].sample,
+                capacity: rand(5..25) * 10)
 end
