@@ -6,13 +6,13 @@ class CastlesController < ApplicationController
   def index
     @castles = Castle.all
     # The `geocoded` scope filters only flats with coordinates
-    # @markers = @castles.geocoded.map do |castle|
-    #   {
-    #     lat: castle.latitude,
-    #     lng: castle.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { castle: castle })
-    #   }
-    # end
+    @markers = @castles.geocoded.map do |castle|
+      {
+        lat: castle.latitude,
+        lng: castle.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { castle: castle })
+      }
+    end
   end
 
   def show
