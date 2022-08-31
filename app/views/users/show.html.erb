@@ -1,16 +1,20 @@
-<h1>User Profile</h1>
+<div class="form-registration">
 
-<h3>User information</h3>
-<p>Title: <%= @user.title %></p>
-<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
-<p>Email: <%= @user.email %></p>
+  <h1>User Profile</h1>
 
-<h3>Current reservations</h3>
+  <h3>User information</h3>
+  <p>Title: <%= @user.title %></p>
+  <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+  <p>Email: <%= @user.email %></p>
 
-<% @my_reservations.each do |stay| %>
-<li>
-  Place: <%= stay.castle[:name] %>,
-  Total nights stay: <%= (stay.check_out - stay.check_in).to_i %>,
-  Total price: £ <%= stay.total_price %>
-</li>
-<% end %>
+  <h3>Current reservations</h3>
+
+  <% @my_reservations.each do |stay| %>
+  <li>
+    Place: <%= stay.castle[:name] %>,
+    Total nights stay: <%= (stay.check_out - stay.check_in).to_i %>,
+    Total price: £ <%= stay.total_price %>
+  </li>
+  <% end %>
+
+</div>
