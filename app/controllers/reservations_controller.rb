@@ -1,8 +1,4 @@
 class ReservationsController < ApplicationController
-  def new
-    @castle = Castle.find(params[:castle_id])
-    @reservation = Reservation.new
-  end
 
   def create
     @castle = Castle.find(params[:castle_id])
