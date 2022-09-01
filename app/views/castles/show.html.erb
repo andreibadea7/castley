@@ -1,25 +1,48 @@
-<div class="form-registration rounded-4">
-  <div>
-   <p class="btn btn-light btn-sm"> <%=  link_to "Back to other castles", castles_path, class: "text-blue text-decoration-none" %>
-  </div>
-  <h1><%= @castle.name.capitalize %></h1>
+<div style="display:flex">
 
-  <div class="card-trip">
-    <%= image_tag @castle.image_url %>
-    <% p @castle.image_url  %>
-    <div class="card-trip-infos">
-      <div>
-        <h2>Information</h2>
-        <p><em>Address:</em> <%= @castle.address %></p>
-        <p><em>Capacity:</em> <%= @castle.capacity %></p>
-        <p><em>Internet:</em> <%= @castle.has_internet ? "✅": "❌" %></p>
-        <p><em>Swimming Pool:</em> <%= @castle.has_swimming_pool ? "✅" : "❌" %></p>
-        <p><em>Butlers:</em> <%= @castle.has_butlers ? "✅" : "❌" %></p>
-        <p><em>Horses:</em> <%= @castle.has_horses ? "✅" : "❌" %></p>
-      </div>
-      <h2 class="card-trip-pricing">Price: £<%= number_with_delimiter(@castle.price) %></h2>
+  <div class="form-registration rounded-4">
+    <div>
+    <p class="btn btn-light btn-sm"> <%=  link_to "Back to other castles", castles_path, class: "text-blue text-decoration-none" %>
     </div>
+    <h1><%= @castle.name.capitalize %></h1>
+
+    <div class="card-trip">
+      <% if @castle.photo.attached? %>
+        <%= cl_image_tag @castle.photo.key %>
+      <% else %>
+        <%= image_tag @castle.image_url %>
+      <% end %>
+
+      <div class="card-trip-infos">
+        <div>
+          <h2>Information</h2>
+          <p><em>Address:</em> <%= @castle.address %></p>
+          <p><em>Capacity:</em> <%= @castle.capacity %></p>
+          <p><em>Internet:</em> <%= @castle.has_internet ? "✅": "❌" %></p>
+          <p><em>Swimming Pool:</em> <%= @castle.has_swimming_pool ? "✅" : "❌" %></p>
+          <p><em>Butlers:</em> <%= @castle.has_butlers ? "✅" : "❌" %></p>
+          <p><em>Horses:</em> <%= @castle.has_horses ? "✅" : "❌" %></p>
+        </div>
+        <h2 class="card-trip-pricing">Price: £<%= number_with_delimiter(@castle.price) %></h2>
+      </div>
+    </div>
+    <p class="btn btn-primary btn-lg rounded-4 mt-3"><%= link_to "Click here to reserve", new_castle_reservation_path(@castle), class: "text-white text-decoration-none" %>
+
   </div>
-  <p class="btn btn-primary btn-lg rounded-4 mt-3"><%= link_to "Click here to reserve", new_castle_reservation_path(@castle), class: "text-white text-decoration-none" %>
+
+  <div class="form-registration rounded-4">
+
+  <h2>Previous reviews for the <%= @castle.name %></h2>
+
+  <% @castle.reviews.each do |rev| %>
+    <p>Comment: <%= rev.comment %></p>
+    <p>Rating: <%= rev.rating %></p>
+    <p>Review left: <%= rev.created_at.strftime('%B %Y') %></p>
+    <% @castle.reservations.each do |guest| %>
+      <%= guest.guest[:first_name] %> <%= guest.guest[:last_name] %>
+    <% end %>
+  <% end %>
+
+  </div>
 
 </div>
