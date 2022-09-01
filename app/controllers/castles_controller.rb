@@ -4,7 +4,12 @@ class CastlesController < ApplicationController
   end
 
   def index
-    @castles = Castle.all
+    if params[:query].present?
+      @castles = Castle.search_by_name_or_address(params[:query])
+    else
+      @castles = Castle.all
+    end
+
     # The `geocoded` scope filters only flats with coordinates
     @markers = @castles.geocoded.map do |castle|
       {

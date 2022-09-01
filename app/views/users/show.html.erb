@@ -33,5 +33,15 @@
       <% end %>
     <% end %>
 
+  <h3>Current reservations</h3>
+  <div class="card-reservation">
+    <% @my_reservations.each do |stay| %>
+      <div class="card-product-infos">
+        <p>Place: <%= stay.castle[:name] %></p>
+        <p>Length of stay: <%= stay.check_in.strftime('%d-%m-%Y') %> - <%= stay.check_out.strftime('%d-%m-%Y') %></p>
+        <p>Total price: £<%= number_with_delimiter(stay.total_price) %></p>
+      </div>
+    <% end %>
+
   </div>
 </div>
