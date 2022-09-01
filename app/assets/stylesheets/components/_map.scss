@@ -7,6 +7,14 @@
  border: 1px solid lightblue;
 }
 
+.showpage-map {
+  .map {
+    width: 450px;
+    height: 250px;
+    margin-top: 45px;
+  }
+}
+
 .mapboxgl-popup {
   max-width: 400px;
 }

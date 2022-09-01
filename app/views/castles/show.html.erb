@@ -29,16 +29,21 @@
 
   </div>
 
-  <div class="form-registration rounded-4">
+  <div>
 
-  <h3>Book your stay at <%= @castle.name %>!</h3>
+    <div class="showpage-map">
+      <%= render 'shared/map'%>
+    </div>
 
-    <%= simple_form_for [@castle, @reservation] do |f| %>
-        <%= f.input :check_in %>
-        <%= f.input :check_out %>
-        <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
+    <div class="form-registration rounded-4">
+      <h3>Book your stay at <%= @castle.name %>!</h3>
 
+        <%= simple_form_for [@castle, @reservation] do |f| %>
+            <%= f.input :check_in %>
+            <%= f.input :check_out %>
+            <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+    </div>
   </div>
 
   <div class="form-registration rounded-4">
