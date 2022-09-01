@@ -3,8 +3,11 @@
   <div class="cards">
       <% @castles.each do |castle| %>
         <div class="card-trip">
-          <%= image_tag castle.image_url %>
-          <% p castle.image_url  %>
+          <% if castle.photo.attached? %>
+            <%= cl_image_tag castle.photo.key %>
+          <% else %>
+            <%= image_tag castle.image_url %>
+          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%= link_to castle.name,

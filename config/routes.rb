@@ -5,4 +5,8 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
   get :my_profile, to: 'users#show'
+
+  resources :reservations, only: [] do
+    resources :reviews, only: [:new, :create]
+  end
 end
