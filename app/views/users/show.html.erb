@@ -10,11 +10,9 @@
   <h3>Current reservations</h3>
 
   <% @my_reservations.each do |stay| %>
-  <li>
-    Place: <%= stay.castle[:name] %>,
-    Total nights stay: <%= (stay.check_out - stay.check_in).to_i %>,
-    Total price: £ <%= stay.total_price %>
-  </li>
+  <p>Place: <%= stay.castle[:name] %></p>
+  <p>Length of stay: <%= stay.check_in.strftime('%d-%m-%Y') %> - <%= stay.check_out.strftime('%d-%m-%Y') %></p>
+  <p>Total price: £<%= number_with_delimiter(stay.total_price) %></p>
   <% end %>
 
 </div>
