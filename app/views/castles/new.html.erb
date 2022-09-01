@@ -1,7 +1,7 @@
-<div class="form-registration rounded-4">
+<div class="form-registration">
   <h1>Add a castle to rent! 🏰</h1>
 
-  <div class="form-group rounded-3">
+  <div class="form-group">
     <%= simple_form_for(@castle) do |f| %>
       <%= f.input :name %>
       <%= f.input :address %>
@@ -11,7 +11,7 @@
       <%= f.input :has_swimming_pool %>
       <%= f.input :has_butlers %>
       <%= f.input :has_horses %>
-      <%= f.button :submit, class: "btn btn-primary rounded-4" %>
+      <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
