@@ -3,15 +3,15 @@
     <div class="banner__content">
       <h1 class="banner__heading text-white">This is a re**moat**ley brilliant app 🏰 </h1>
       <p class="banner__leading text-white">Have a lovely knight.</p>
-      <%= form_tag('/castles', method: "get", class: "Banner__form") do %>
-        <div class="input-group input-group-lg">
-          <%= text_field_tag(:query, nil, placeholder: "Where do you want your event?", class: "Input Banner__input form-control") %>
-          <div class="input-group-btn">
-            <%= button_tag :submit, class: "btn btn-primary btn-lg" do %>
-              <i class="fa fa-search" aria-hidden="true"></i>
-            <% end %>
-          </div>
-        </div>
+      <%= form_with url: castles_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Where would you like to stay?"
+        %>
+        <%= button_tag :submit, class: "btn btn-primary btn-lg" do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        <% end %>
       <% end %>
     </div>
   </div>
