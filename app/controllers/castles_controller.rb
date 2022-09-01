@@ -42,6 +42,6 @@ class CastlesController < ApplicationController
 
   def castle_params
     params.require(:castle).permit(:name, :address, :price, :capacity, :has_internet, :has_swimming_pool,
-                                   :has_butlers, :has_horses)
+                                   :has_butlers, :has_horses, :photo)
   end
 end

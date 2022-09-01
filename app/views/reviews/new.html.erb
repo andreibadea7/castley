@@ -1,0 +1,11 @@
+<div class="form-registration">
+  <h1>Leave a review of your stay!</h1>
+
+  <div class="form-group">
+    <%= simple_form_for [@reservation, @review] do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :comment %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
