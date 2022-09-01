@@ -8,7 +8,20 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <% unless current_page?(root_path) %>
+      <%= form_with url: castles_path, method: :get, class: "d-flex width-350" do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Where would you like to stay?"
+       %>
+       <%= button_tag :submit, class: "btn btn-primary btn-lg" do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <div class="collapse navbar-collapse margin-left-auto" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
