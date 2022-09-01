@@ -26,7 +26,18 @@
         <h2 class="card-trip-pricing">Price: £<%= number_with_delimiter(@castle.price) %></h2>
       </div>
     </div>
-    <p class="btn btn-primary btn-lg rounded-4 mt-3"><%= link_to "Click here to reserve", new_castle_reservation_path(@castle), class: "text-white text-decoration-none" %>
+
+  </div>
+
+  <div class="form-registration rounded-4">
+
+  <h3>Book your stay at <%= @castle.name %>!</h3>
+
+    <%= simple_form_for [@castle, @reservation] do |f| %>
+        <%= f.input :check_in %>
+        <%= f.input :check_out %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
 
   </div>
 
