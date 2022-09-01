@@ -29,6 +29,7 @@
           </div>
         </div>
     </div>
+    </div>
 
     <div class="form-registration m-3 rounded-4">
       <h2>Previous stays</h2>
@@ -36,7 +37,7 @@
         <% @my_reservations.each do |stay| %>
 
           <% if stay.check_out <= Date.today %>
-          <div class="card-trip p-3">
+          <div class="card-trip p-3 mb-2">
               <h2><%= link_to stay.castle[:name],
                       castle_path(stay),
                       style: "text-decoration: none; color: black;" %></h2>
