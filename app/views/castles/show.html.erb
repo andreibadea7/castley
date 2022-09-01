@@ -1,42 +1,25 @@
-<div class="form-registration">
-  <h1><%= @castle.name.capitalize %></h1>
-
-  <h2>Key information</h2>
-
-  <ul>
-    <li>
-      Address: <%= @castle.address %>
-    </li>
-    <li>
-      How many people can stay? <%= @castle.capacity %>
-    </li>
-    <li>
-      How much does it cost? <%= @castle.price %>
-    </li>
-  </ul>
-
-  <h2>Other information</h2>
-
-  <ul>
-    <li>
-      Is there internet? <%= @castle.has_internet ? "Yes" : "No" %>
-    </li>
-    <li>
-      Is there a swimming pool? <%= @castle.has_swimming_pool ? "Yes" : "No" %>
-    </li>
-    <li>
-      Do we have butlers? <%= @castle.has_butlers ? "Yes" : "No" %>
-    </li>
-    <li>
-      Can we ride horses? <%= @castle.has_horses ? "Yes" : "No" %>
-    </li>
-  </ul>
-  <div>
-    <h4>Do you want to reserve this castle?</h4>
-    <p class="btn btn-primary btn-lg"><%= link_to "Click here!", new_castle_reservation_path(@castle), class: "text-white text-decoration-none" %>
-  </div>
-
+<div class="form-registration rounded-4">
   <div>
    <p class="btn btn-light btn-sm"> <%=  link_to "Back to other castles", castles_path, class: "text-blue text-decoration-none" %>
   </div>
+  <h1><%= @castle.name.capitalize %></h1>
+
+  <div class="card-trip">
+    <%= image_tag @castle.image_url %>
+    <% p @castle.image_url  %>
+    <div class="card-trip-infos">
+      <div>
+        <h2>Information</h2>
+        <p><em>Address:</em> <%= @castle.address %></p>
+        <p><em>Capacity:</em> <%= @castle.capacity %></p>
+        <p><em>Internet:</em> <%= @castle.has_internet ? "✅": "❌" %></p>
+        <p><em>Swimming Pool:</em> <%= @castle.has_swimming_pool ? "✅" : "❌" %></p>
+        <p><em>Butlers:</em> <%= @castle.has_butlers ? "✅" : "❌" %></p>
+        <p><em>Horses:</em> <%= @castle.has_horses ? "✅" : "❌" %></p>
+      </div>
+      <h2 class="card-trip-pricing">Price: £<%= number_with_delimiter(@castle.price) %></h2>
+    </div>
+  </div>
+  <p class="btn btn-primary btn-lg rounded-4 mt-3"><%= link_to "Click here to reserve", new_castle_reservation_path(@castle), class: "text-white text-decoration-none" %>
+
 </div>
