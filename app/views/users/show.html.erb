@@ -1,8 +1,8 @@
 
 <%# this page is not finished! %>
-<h1 class="m-3">Hello <%= @user.first_name.capitalize %>!</h1>
+<h1 class="m-3">Hello <%= @user.first_name.capitalize.strip %>!</h1>
 
-<div style="display:flex">
+<div class="d-flex m-2 justify-content-center">
     <div class="form-registration m-3 rounded-4">
       <h3>User information</h3>
       <p>Title: <%= @user.title %></p>
@@ -14,7 +14,10 @@
         <div class="card-trip p-3 shadow-none bg-light">
             <% if stay.check_out > Date.today %>
               <div class="text-white bg-primary rounded-3 p-1 m-1 text-center">
-                <h2><%= stay.castle[:name] %></h2>
+                <h2><%= link_to stay.castle[:name],
+                      castle_path(stay),
+                      style: "text-decoration: none; color: white;" %></h2>
+
               </div>
                 <p>From: <%= stay.check_in.strftime('%d-%m-%Y') %> </p>
                 <p>To: <%= stay.check_out.strftime('%d-%m-%Y') %></p>
@@ -31,11 +34,15 @@
       <h2>Previous stays</h2>
       <div>
         <% @my_reservations.each do |stay| %>
-          <div class="card-trip p-3">
+
           <% if stay.check_out <= Date.today %>
-              <p>Place: <%= stay.castle[:name] %></p>
-              <p>Length of stay: <%= stay.check_in.strftime('%d-%m-%Y') %> - <%= stay.check_out.strftime('%d-%m-%Y') %></p>
-              <p class="btn btn-primary btn-sm"><%= link_to "Leave a review", new_reservation_review_path(stay), class: "text-white text-decoration-none" %>
+          <div class="card-trip p-3">
+              <h2><%= link_to stay.castle[:name],
+                      castle_path(stay),
+                      style: "text-decoration: none; color: black;" %></h2>
+              <p>From: <%= stay.check_in.strftime('%d-%m-%Y') %></p>
+              <p>To: <%= stay.check_out.strftime('%d-%m-%Y') %></p>
+              <p class="btn btn-primary btn-sm mt-2"><%= link_to "Leave a review", new_reservation_review_path(stay), class: "text-white text-decoration-none" %>
             <% end %>
           </div>
         <% end %>
