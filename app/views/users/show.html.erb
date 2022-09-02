@@ -1,3 +1,4 @@
+
 <h1 class="m-3">Hello <%= @user.first_name.capitalize.strip %>!</h1>
 
 <div class="d-flex justify-content-center">
@@ -27,13 +28,14 @@
     <% end %>
   </div>
 
+
   <div class="form-registration rounded-4 m-3 mw-40">
     <h2>Previous stays</h2>
 
     <% @my_reservations.each do |stay| %>
       <% if stay.check_out <= Date.today %>
         <div class="notification border rounded-4 p-2">
-          <p class="btn btn-primary btn-sm mt-1 rounded-4"><%= link_to "Leave a review", new_reservation_review_path(stay), class: "text-white text-decoration-none" %>
+          <p class="btn btn-primary btn-sm mt-1 rounded-4"><%= link_to "Leave a review", new_reservation_review_path(stay), class: "text-white text-decoration-none" %></p>
               <div class="notification-content">
                 <p><small>From: <%= stay.check_in.strftime('%d-%m-%Y') %></small></p>
                 <p><small>To: <%= stay.check_out.strftime('%d-%m-%Y') %></small></p>
@@ -41,12 +43,13 @@
                 castle_path(stay),
                 style: "text-decoration: none; color: black;" %></h5>
               </div>
+
               <div class="notification-actions">
                 <p>Total price: <strong>£<%= number_with_delimiter(stay.total_price.abs) %></strong></p>
         <% end %>
               </div>
+        </div>
     <% end %>
-       </div>
+        </div>
     </div>
 </div>
-
