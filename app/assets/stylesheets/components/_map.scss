@@ -15,12 +15,21 @@
    }
  }
 
+.showpage-map {
+  .map {
+    width: 450px;
+    height: 250px;
+    margin-top: 45px;
+  }
+}
+
 .mapboxgl-popup {
   max-width: 400px;
 }
 
 .mapboxgl-popup-content {
   font-family: "Open Sans", sans-serif;
+  font-size: medium;
   width: 360px;
 }
 

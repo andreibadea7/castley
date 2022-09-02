@@ -1,4 +1,4 @@
-<div style="display:flex">
+<div style="display:flex ">
 
   <div class="form-registration rounded-4">
     <div>
@@ -29,20 +29,19 @@
 
   </div>
 
-   <div class="showpage-map">
+    <div class="showpage-map">
       <%= render 'shared/map'%>
     </div>
 
-  <div class="form-registration rounded-4">
+    <div class="form-registration rounded-4">
+      <h3>Book your stay at <%= @castle.name %>!</h3>
 
-  <h3>Book your stay at <%= @castle.name %>!</h3>
-
-    <%= simple_form_for [@castle, @reservation] do |f| %>
-        <%= f.input :check_in %>
-        <%= f.input :check_out %>
-        <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-
+        <%= simple_form_for [@castle, @reservation] do |f| %>
+            <%= f.input :check_in %>
+            <%= f.input :check_out %>
+            <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+    </div>
   </div>
 
   <div class="form-registration rounded-4">

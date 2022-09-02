@@ -23,6 +23,10 @@ class CastlesController < ApplicationController
   def show
     @castle = Castle.find(params[:id])
     @reservation = Reservation.new
+    @markers = [{
+        lat: @castle.latitude,
+        lng: @castle.longitude
+      }]
   end
 
   def new
