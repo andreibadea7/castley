@@ -38,12 +38,12 @@ end
   )
 end
 
-reservations_without_ids = Reservation.all.ids - Review.all.pluck(:reservation_id)
+# reservations_without_ids = Reservation.all.ids - Review.all.pluck(:reservation_id)
 
-reservations_without_ids.count.times do
-  Review.create(
-    reservation_id: reservations_without_ids.sample,
-    rating: rand(1..5),
-    comment: "Nice one"
-  )
-end
+# reservations_without_ids.count.times do
+#   Review.create(
+#     reservation_id: reservations_without_ids.sample,
+#     rating: rand(1..5),
+#     comment: "Nice one"
+#   )
+# end
