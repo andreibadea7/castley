@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
-    @my_reservations = Reservation.where(guest: current_user)
+    if user_signed_in?
+      @user = current_user
+      @my_reservations = Reservation.where(guest: current_user)
+    else
+      redirect_to new_user_session_path
+    end
   end
 end
