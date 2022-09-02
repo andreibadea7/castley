@@ -1,5 +1,5 @@
 <div class="form-registration">
-  <h1>Leave a review of your stay!</h1>
+  <h1>Leave a review of your stay at <%= @reservation.castle[:name] %>!</h1>
 
   <div class="form-group">
     <%= simple_form_for [@reservation, @review] do |f| %>
