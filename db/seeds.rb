@@ -45,6 +45,6 @@ reservations_without_ids.count.times do
   Review.create(
     reservation_id: reservations_without_ids.sample,
     rating: rand(1..5),
-    comment: Faker::Quote.jack_handey
+    comment: "Nice one"
   )
 end
