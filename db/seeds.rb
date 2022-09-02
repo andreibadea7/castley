@@ -1,7 +1,6 @@
 require "json"
 require "open-uri"
 require "nokogiri"
-require "Faker"
 
 url = 'https://www.veranda.com/travel/g30083514/beautiful-castles-in-the-world/'
 user_serialized = URI.open(url).read
