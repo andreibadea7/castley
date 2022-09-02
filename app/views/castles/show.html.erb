@@ -54,9 +54,7 @@
     <p>Comment: <%= rev.comment %></p>
     <p>Rating: <%= rev.rating %></p>
     <p>Review left: <%= rev.created_at.strftime('%B %Y') %></p>
-    <% @castle.reservations.each do |guest| %>
-      <%= guest.guest[:first_name] %> <%= guest.guest[:last_name] %>
-    <% end %>
+    <p>Name: <%= rev.guest.first_name %> <%= rev.guest.last_name %></p>
   <% end %>
 
   </div>
