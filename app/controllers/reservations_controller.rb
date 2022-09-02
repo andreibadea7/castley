@@ -1,15 +1,19 @@
 class ReservationsController < ApplicationController
 
   def create
-    @castle = Castle.find(params[:castle_id])
-    @reservation = Reservation.new(reservation_params)
-    @reservation.total_price = ((@reservation.check_out - @reservation.check_in).to_i * @castle.price)
-    @reservation.guest = current_user
-    @reservation.castle = @castle
-    if @reservation.save
-      redirect_to my_profile_path
+    if user_signed_in?
+      @castle = Castle.find(params[:castle_id])
+      @reservation = Reservation.new(reservation_params)
+      @reservation.total_price = ((@reservation.check_out - @reservation.check_in).to_i * @castle.price)
+      @reservation.guest = current_user
+      @reservation.castle = @castle
+      if @reservation.save
+        redirect_to my_profile_path
+      else
+        render :new, status: :unprocessable_entity
+      end
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_user_session_path
     end
   end
 
