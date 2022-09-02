@@ -1,11 +1,19 @@
 .map {
- width: 95vw;
- height: 500px;
- margin: 15px auto;
- border-radius: 15px;
- box-shadow: 0 0 15px lightblue;
- border: 1px solid lightblue;
-}
+  width: 95vw;
+  height: 500px;
+  margin: 15px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 15px lightblue;
+  border: 1px solid lightblue;
+ }
+
+ .showpage-map {
+   .map {
+     width: 450px;
+     height: 250px;
+     margin-top: 45px;
+   }
+ }
 
 .mapboxgl-popup {
   max-width: 400px;
