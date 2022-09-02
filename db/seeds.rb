@@ -27,7 +27,7 @@ html_doc.search(".listicle-slide").each do |element|
 end
 
 10.times do
-  check_in = Date.new(rand(1977..2021), rand(1..12), rand(1..28))
+  check_in = Date.new(rand(2015..2021), rand(1..12), rand(1..28))
   check_out = check_in + rand(1..100)
   Reservation.create(
     check_in: check_in,
